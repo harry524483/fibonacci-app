@@ -5,13 +5,15 @@
       "name": "api",
       "image": "harry1989/fibonacci-api",
       "hostname": "api",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "client",
       "image": "harry1989/fibonacci-client",
       "hostname": "client",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "nginx",
@@ -24,13 +26,15 @@
           "containerPort": 80
         }
       ],
-      "links": ["api", "client"]
+      "links": ["api", "client"],
+      "memory": 128
     },
     {
       "name": "worker",
       "image": "harry1989/fibonacci-worker",
       "hostname": "worker",
-      "essential": false
+      "essential": false,
+      "memory": 128
     }
   ]
 }
