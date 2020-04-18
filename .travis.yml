@@ -2,6 +2,11 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t harry1989/fibonacci-client -f ./client/Dockerfile.dev ./client
+  - docker build -t harry1989/fibonacci-client-test -f ./client/Dockerfile.dev ./client
 script:
-  - docker run -e CI=true harry1989/fibonacci-client npm test
+  - docker run -e CI=true harry1989/fibonacci-client-test npm test
+after_success:
+  - docker build -t harry1989/fibonacci-api ./api
+  - docker build -t harry1989/fibonacci-client ./client
+  - docker build -t harry1989/fibonacci-nginx ./nginx
+  - docker build -t harry1989/fibonacci-worker ./worker
