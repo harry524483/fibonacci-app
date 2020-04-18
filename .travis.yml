@@ -10,3 +10,8 @@ after_success:
   - docker build -t harry1989/fibonacci-client ./client
   - docker build -t harry1989/fibonacci-nginx ./nginx
   - docker build -t harry1989/fibonacci-worker ./worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push harry1989/fibonacci-api
+  - docker push harry1989/fibonacci-client
+  - docker push harry1989/fibonacci-nginx
+  - docker push harry1989/fibonacci-worker
