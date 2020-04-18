@@ -6,14 +6,14 @@
       "image": "harry1989/fibonacci-api",
       "hostname": "api",
       "essential": false,
-      "memory": 128
+      "memory": 1024
     },
     {
       "name": "client",
       "image": "harry1989/fibonacci-client",
       "hostname": "client",
       "essential": false,
-      "memory": 128
+      "memory": 1024
     },
     {
       "name": "nginx",
@@ -27,14 +27,14 @@
         }
       ],
       "links": ["api", "client"],
-      "memory": 128
+      "memory": 1024
     },
     {
       "name": "worker",
       "image": "harry1989/fibonacci-worker",
       "hostname": "worker",
       "essential": false,
-      "memory": 128
+      "memory": 1024
     }
   ]
 }
