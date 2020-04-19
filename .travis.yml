@@ -20,9 +20,9 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "fibonacci-docker-app"
-  env: "FibonacciDockerApp-env"
+  app: "fibonacci-docker-web"
+  env: "FibonacciDockerWeb-env"
   bucket_name: "elasticbeanstalk-us-east-1-874380526196"
-  bucket_path: "fibonacci-docker-app"
+  bucket_path: "fibonacci-docker-web"
   on:
     branch: master
